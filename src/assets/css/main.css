@@ -1,0 +1,505 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.homecrstcolor {
+    background-color: #444;
+    color: white;
+    min-width: 80px !important;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 0;
+    color: #444444;
+    /* Margin bottom by footer height */
+}
+
+/*  Login Page ==================*/
+
+.login-bg {
+    background: url(/assets/images/background-bg.png) repeat;
+    min-height: 100%;
+    width: 100%;
+    padding: 1%;
+}
+
+.login-wrapper {
+    margin: 3% 15%;
+    ;
+    background: #ffffff;
+}
+
+.login-img {
+    display: inline-block;
+    height: 100%;
+}
+
+.login-card {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10%;
+    width: 100%;
+}
+
+.login-card .login-card-header {
+    text-align: center;
+}
+
+.login-card .login-card-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+}
+
+.login-card .login-card-form a {
+    color: #000000;
+}
+
+.login-card .login-card-form .label-remember {
+    text-align: left;
+    color: #000000;
+}
+
+.login-card .login-card-form .label-remember .checkbox label {
+    font-size: 1rem;
+    line-height: 1.1;
+    color: #000000;
+}
+
+.login-card .login-card-form .label-forgot {
+    text-align: right;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.login-card .login-card-form .label-register {
+    font-size: 1rem;
+}
+
+.logindiv {
+    background-color: white;
+    /* margin-bottom: 50px; */
+    padding: 50px !important;
+}
+
+.loginbox {
+    box-shadow: 0 0 5px rgb(204, 203, 203);
+    background-color: white;
+    padding: 40px 10px 20px 10px !important;
+}
+
+.loginitem {
+    height: 45px !important;
+    margin: 20px 15px 20px 15px !important;
+    color: #002a5c;
+}
+
+.loginitemwidth {
+    width: 100% !important;
+}
+
+.margin {
+    margin: 0 10px;
+}
+
+.login-btn {
+    width: 100%;
+    color: #e0e0e0 !important;
+    transition: .3s ease-in-out;
+    background-color: #2e2f30 !important;
+}
+
+.loginmainbox {
+    background-color: white;
+    padding: 0px 0px;
+}
+
+.signinbox {
+    margin: 2px 15px 2px 15px !important;
+}
+
+.login-btn:hover {
+    background-color: #444447;
+    color: white;
+    border: none;
+}
+
+.registor {
+    color: blue !important;
+}
+
+
+
+.footer-secion {
+    /* position: absolute; */
+    /* left: 0;  */
+    bottom: 0;
+    width: 100%;
+    /* height: 60px; */
+    /* Set the fixed height of the footer here */
+    /* line-height: 60px; */
+    /* Vertically center the text there */
+    background-color: #444;
+    border-top: 1px solid #cecece;
+    padding: 2% 0%;
+    /* z-index:10; */
+}
+
+a {
+    color: #444444;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #444444;
+    border-color: #444444;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #444444;
+    border-color: #444444;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #444444;
+    border-color: #444444;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #444444;
+    border-color: #444444;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.shadow-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.shadow-1:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.shadow-2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.shadow-3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* header part */
+
+.widget-content-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+}
+
+.pclass {
+    font-size: 20px !important;
+}
+
+.settings {
+    height: 45px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3 ease-in;
+}
+
+
+/* .settings:hover {
+    background-color: #e6e6e6;
+    transition: .3 ease-in;
+} */
+
+.hoverred {
+    text-align: right;
+}
+
+.name {
+    display: none !important;
+}
+
+.menuborder {
+    border-bottom: .1px rgb(112, 112, 112) solid !important;
+}
+
+.hoverred:hover {
+    color: #dc3545;
+}
+
+.material-icons {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+
+/* header end here */
+
+
+/* Dashboard section */
+
+.heading-section {
+    background: #dad9d9;
+    /* display: inline-block; */
+    width: 100%;
+    margin: 0px;
+}
+
+.dashboardheading {
+    padding: 1rem 0rem;
+    width: 100%;
+    color: #1f2020;
+}
+
+.dheadingfontsize {
+    font-size: 30px !important;
+    color: #1f2020;
+    /* margin: 0px 4.5%; */
+    /* text-align: center; */
+    /* transfrm: translateX(-50%);  */
+}
+
+.main-section {
+    min-height: calc(100vh - 220px);
+}
+
+.hcmenudiv {
+    background-color: white;
+    /* margin-bottom: 50px; */
+    padding: 2rem 0px;
+}
+
+.hcmenubox {
+    width: 50% !important;
+    /* min-width: fit-content; */
+    background-color: white;
+    margin: auto;
+    /* padding: 10px 0px 10px 0px; */
+}
+
+.menuitem {
+    /* height: 50px; */
+    margin: 2px 0px 2px 0px !important;
+    cursor: pointer;
+}
+
+
+/* .menuitem a:active {
+    background-color: #373737;
+    color: white
+} */
+
+.blankdiv {
+    background-color: #F2F3F4;
+}
+
+
+/* dashboard ends here  */
+
+
+/*  Footer Section   ==================*/
+
+.footer-main .footer-logo {
+    display: inline-block;
+    /* width: 20%; */
+}
+
+.footer-main .copyright {
+    /* display: inline-block; */
+    color: #ffffff;
+    /* width: 60%; */
+    text-align: center;
+}
+
+.footer-main .footer-link {
+    /* display: inline-block; */
+    /* color: #000000; */
+    color: white;
+    /* float: right; */
+    /* width: 20%; */
+    text-align: right;
+}
+
+.footer-main .footer-link a {
+    color: white;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.footer-main .footer-link a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Cutfile css start here*/
+
+.edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s linear;
+    z-index: 19;
+}
+
+.edit {
+    position: fixed;
+    height: 50%;
+    top: 100px;
+    left: 30%;
+    width: 40%;
+    height: 0;
+    /* 500px */
+    z-index: 20;
+    overflow: auto;
+    background-color: #ffffff !important;
+    transition: all 0.2s linear;
+}
+
+.edit.active {
+    min-width: 400px;
+    width: 40%;
+    height: 500px;
+    color: black !important;
+}
+
+
+/* Cutfile css ends here*/
+
+/* Media query starts from here */
+
+@media only screen and (max-width: 767px) {
+    /* header */
+    .name {
+        display: block !important;
+    }
+    .pclass {
+        font-size: 20px !important;
+        display: none;
+    }
+    .logouticon {
+        margin: 25% 0% 21% -52% !important;
+    }
+    .logouticon .mat-icon {
+        font-size: 47px !important;
+    }
+    /* dashboard */
+    .dashboardheading {
+        padding: 0.5rem 0rem;
+        width: 100%;
+        color: #1f2020;
+        text-align: center !important;
+    }
+    .dheadingfontsize {
+        font-size: 22px !important;
+        color: #1f2020;
+        /* margin: 0px 4.5%; */
+        /* text-align: center; */
+    }
+    .blankdiv {
+        background-color: #F2F3F4;
+        display: none;
+    }
+    /* footer */
+    .footer-main .footer-logo {
+        /* display: inline-block; */
+        /* width: 20%; */
+        text-align: center !important;
+    }
+    .footer-main .footer-link {
+        /* display: inline-block; */
+        /* color: #000000; */
+        color: white;
+        /* float: right; */
+        /* width: 20%; */
+        text-align: center !important;
+    }
+    .footer-logo-box {
+        text-align: center;
+    }
+    .footer-main .footer-link-box {
+        text-align: center;
+    }
+    /* change password */
+    .hcmenubox {
+        width: 100% !important;
+        min-width: fit-content;
+        background-color: white;
+        margin: auto;
+        /* padding: 10px 0px 10px 0px; */
+    }
+    .hcmenudiv {
+        background-color: white;
+        /* margin-bottom: 50px; */
+        padding: 2rem 0px;
+    }
+    /* Cutfile CSS start from here */
+    .edit-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s linear;
+        z-index: 19;
+    }
+    .edit {
+        position: fixed;
+        height: 50%;
+        top: 100px;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 0;
+        /* 500px */
+        z-index: 20;
+        overflow: auto;
+        background-color: #ffffff !important;
+        transition: all 0.2s linear;
+    }
+    .edit.active {
+        min-width: 200px;
+        width: 90%;
+        height: 500px;
+        color: black !important;
+    }
+    /* Cutfile CSS ends from here */
+}
+
+@media only screen and (min-width:768px) and (max-width: 1024px) {
+    .login-wrapper {
+        margin: 8% 3%;
+        background: #ffffff;
+    }
+}

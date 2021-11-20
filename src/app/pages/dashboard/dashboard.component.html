@@ -1,0 +1,169 @@
+<app-header></app-header>
+<div class="heading-section row m-0">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-9 text-left dashboardheading">
+        <!-- <div class="dashboardheading col-12 text-left"> -->
+        <span class="dheadingfontsize">User Details</span>
+        <!-- </div> -->
+    </div>
+    <div class="col-md-1">
+
+    </div>
+
+</div>
+<div class="row main-section m-0">
+    <div class="col-md-2 blankdiv">
+
+    </div>
+    <div class="col-md-9 p-3">
+        <div class="edit-overlay" *ngIf="show || delete " (click)="show = !show; flag = false; delete = false"></div>
+        <div class="cat-Delete" [class.activeDelete]="delete">
+            <h3 class="text-center mt-4 ml-3">
+              Sure you want to delete this record?
+            </h3>
+            <button
+              (click)="onDelete()"
+              class="btn homecrstcolor cat-btn text-center formBtn mt-4"
+            >
+              <span class="txt">Delete</span>
+            </button>
+            <button
+              type="submit"
+              *ngIf="!flag"
+              class="
+                btn
+                homecrstcolor
+            
+                cat-btn
+                text-center
+                formBtn
+                ml-3
+                mt-4
+              "
+              (click)="delete = !delete"
+            >
+              <span class="txt">Cancel</span>
+            </button>
+          </div>
+        <div class="edit" [class.active]="show">
+            <div class="d-flex m-4">
+                <div>
+                    <h2 class="profile-heading">{{ label }}</h2>
+
+                </div>
+                <span class="space-right"></span>
+
+            </div>
+            <div class="m-5">
+                <form [formGroup]="userForm" #form="ngForm">
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field appearance="outline" class="formfield">
+                                <mat-label>Name</mat-label>
+                                <input [readonly]="flag" matInput formControlName="name">
+                                <small [class.d-none]="userForm.get('name').valid || userForm.get('name').untouched" class="text-danger">Name is required</small>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field appearance="outline" class="formfield">
+                                <mat-label>Email</mat-label>
+                                <input [readonly]="flag" matInput formControlName="email">
+                                <div *ngIf="userForm.get('email').invalid && userForm.get('email').touched">
+                                    <small *ngIf="userForm.get('email').errors?.required" class="text-danger">Email is Required</small>
+                                    <small *ngIf="userForm.get('email').errors?.email" class="text-danger">Email is not valid</small>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field appearance="outline" class="formfield">
+                                <mat-label>Age</mat-label>
+                                <input type="number" maxlength="2" matInput formControlName="age">
+                                <small [class.d-none]="userForm.get('age').valid || userForm.get('age').untouched" class="text-danger">Age is required</small>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field appearance="outline" class="formfield">
+                                <mat-label>Phone No.</mat-label>
+                                <input matInput type="number" formControlName="phone">
+                                <div *ngIf="userForm.get('phone').invalid && userForm.get('phone').touched">
+                                    <small *ngIf="userForm.get('phone').errors?.required" class="text-danger">Phone No. is Required</small>
+                                    <small *ngIf="userForm.get('phone').errors?.pattern" class="text-danger">Phone No. is not valid</small>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button *ngIf="!flag" (click)="onSubmit(form)" [disabled]="!userForm.valid" class="btn homecrstcolor text-center formBtn">
+                                <span class="txt">{{ btnLabel }}</span>
+                              </button>
+                            <button *ngIf="flag" (click)="onUpdate()" [disabled]="!userForm.valid" class="btn homecrstcolor text-center formBtn">
+                                <span class="txt">{{ btnLabel }}</span>
+                              </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="reset" mat-dialog-close class="btn homecrstcolor text-center formBtn" (click)="show = !show; flag = false; form.resetForm();">
+                                <span class="txt">Cancel</span>
+                              </button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
+                    <ng-container matColumnDef="{{ column }}" *ngFor="let column of columnsToDisplay; index as i">
+                        <th mat-header-cell *matHeaderCellDef class="mat-sort-header-container-centered text-center">
+                            {{ column=='name'?'Name':column=='email'?'Email':column=='age'?'Age':column=='phone'?'Phone No.':column=='action'?'':'' }}
+                            <button class="btn homecrstcolor text-center" *ngIf="column=='action'" (click)="onAdd()">
+                                    <span class="txt">Add New</span>
+                                  </button>
+                        </th>
+                        <td mat-cell *matCellDef="let element;index as i">
+                            <label *ngIf="column=='name'">{{element.name}}</label>
+                            <label *ngIf="column=='email'">{{element.email}}</label>
+                            <label *ngIf="column=='age'">{{element.age}}</label>
+                            <label *ngIf="column=='phone'">{{element.phone}}</label>
+                            <span *ngIf="column == 'action'">
+                            <button mat-icon-button color="primary" (click)="onEdit(element)">
+                              <mat-icon fontSet="material-icons-outlined">edit</mat-icon>
+                            </button>
+                            <button mat-icon-button color="warn" (click)="onConfirmDelete(element._id,i)">
+                              <mat-icon>delete_outline</mat-icon>
+                            </button>
+                          </span>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay;"></tr>
+                    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"></tr>
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="5">No record found</td>
+                    </tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[10, 5, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="col-md-1 blankdiv">
+
+    </div>
+</div>
+<app-footer></app-footer>
