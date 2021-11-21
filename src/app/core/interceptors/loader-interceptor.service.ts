@@ -8,15 +8,12 @@ import { LoaderService } from '../services/loader.service';
   providedIn: 'root'
 })
 export class LoaderInterceptorService {
-  service_count = 0;
   constructor(private loaderService: LoaderService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.service_count++;
     this.showLoader();
     return next.handle(req).pipe(tap((event: HttpEvent<any>) => { 
-      this.service_count--;
 
-      if (event instanceof HttpResponse && this.service_count === -3) {
+      if (event instanceof HttpResponse) {
         this.hideLoader();
       }
     },

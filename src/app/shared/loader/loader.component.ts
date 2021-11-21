@@ -30,6 +30,7 @@ export class LoaderComponent implements OnInit {
 
   off() {
     document.getElementById("overlay").style.display = "none";
+    document.getElementById("loader").style.display = "none";
   }
 
 }

@@ -11,6 +11,7 @@ export class HttpClientService {
   private readonly URL = environment.api;
 
   postUser(data: User) {
+    console.log(data)
     return this.http.post<User>(this.URL, data);
   }
 
@@ -22,8 +23,8 @@ export class HttpClientService {
     return this.http.get<User>(`${this.URL}/${id}`);
   }
 
-  updateUser(data: User) {
-    return this.http.put<User>(`${this.URL}/${data._id}`, data);
+  updateUser(data: User, id:any) {
+    return this.http.put<User>(`${this.URL}/${id}`, data);
   }
 
   deleteUser(id: string) {

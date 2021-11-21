@@ -32,6 +32,7 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getUserData();
     this.createForm();
   } 
 
@@ -51,6 +52,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onSubmit(form: FormGroupDirective) {
+    console.log(this.userForm.value)
     this._service.postUser(this.userForm.value).subscribe(response => {
       this.toastr.success('User Added Successfully!!');
       form.resetForm();
@@ -80,25 +82,26 @@ export class DashboardComponent implements OnInit {
   }
 
   onEdit(info) {
+    console.log(info)
     this.show = !this.show;
     this.flag = true;
     this.label = 'Edit User';
     this.btnLabel = 'Update';
+    this.info = info._id
     this.userForm.patchValue({
       ...info,
-      requestType: 'Edit'
     });
   }
 
   onUpdate() {
-    this._service.updateUser(this.userForm.value).subscribe(response => {
+    this._service.updateUser(this.userForm.value, this.info).subscribe(response => {
       this.toastr.success("User Updated Successfully!!");
       this.userForm.reset();
       this.getUserData();
       this.show = false;
     },
       error => {
-        this.toastr.error(error.error);
+        this.toastr.error("Something Went Wrong");
         console.log(error);
       });
     }
